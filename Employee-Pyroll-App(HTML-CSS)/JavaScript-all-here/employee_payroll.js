@@ -21,6 +21,7 @@ function Namevalidaiton() {
         }
     })
 }
+/*Setting Condition for Start Date */
 function Startdate() {
         const date = document.querySelector("#date");
         date.addEventListener('input',function(){
