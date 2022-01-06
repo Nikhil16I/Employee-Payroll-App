@@ -22,8 +22,20 @@ function Namevalidaiton() {
     })
 }
 function Startdate() {
+        const date = document.querySelector("#date");
+        date.addEventListener('input',function(){
+            const startDate = new Date(Date.parse(getInputValueById("#day")+" "+
+                                                getInputValueById("#month")+" "+
+                                                getInputValueById("#year")));
+            if((new Employee_PayrollData()).startDate = startDate){                
+                setTextValue('.date-error',"");
+            }else{
+                
+                throw "Date Is Invalid";
+            }
+        });
+    }
 
-}
 window.addEventListener('DOMContentLoaded', (Event) => {
     Salary();
     Namevalidaiton();
