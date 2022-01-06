@@ -198,3 +198,8 @@ border: 2px solid;
         align-items: flex-start;
     }
 }
+name-error {
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
