@@ -66,3 +66,14 @@ const getInputValueById = (id) => {
 function submitEmployeeForm(){
     window.location = "home.html";
 }
+// saving the data into local storage
+function createAndUpdateStorage(empData) {
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if (employeePayrollList != undefined) {
+        employeePayrollList.push(empData);
+    } else {
+        employeePayrollList = [empData];
+    }
+    alert(employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
+}
