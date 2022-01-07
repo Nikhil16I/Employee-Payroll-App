@@ -100,7 +100,6 @@ function saveForm(){
     });
     empData.department = department;
 };
-
 function submitEmployeeForm(){
     window.location = "home.html";
 }
