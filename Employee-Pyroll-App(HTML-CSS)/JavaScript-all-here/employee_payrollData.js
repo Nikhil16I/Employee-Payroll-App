@@ -1,13 +1,21 @@
-class employeepayrollData {
+class Employee_payrollData {
 
     get id() { return this._id }
     set id(id) {
         this._id = id
     }
 
-    get name() { return this._name }
+    get name() {
+        return this._name;
+    }
     set name(name) {
-        this._name = name;
+        let nameRegex = /^[A-Z][A-Z a-z]{3,}$/;
+        if (nameRegex.test(name)){
+            this._name = name;
+        }
+        else{ 
+            throw "Name is incorrect !";
+        }
     }
 
     get profilePic() { return this._profilePic }
@@ -34,16 +42,24 @@ class employeepayrollData {
     set note(note) {
         this._note = note
     }
-    get startdate() { return this._startdate }
-    set startdate(startdate) {
-        let now = new Date();
-        if (startDate > now){
-            throw "Start Date Is A Future Date";
-        } 
-        var diff = Math.abs(now.getTime() - startDate.getTime());
-        if(diff / (1000 * 60 * 60 * 24) > 30){
-            throw "Start Date Is Beyond 30 Days";
+    get startDate() {
+        return this.startDateValue;
+    }
+
+    set startDate(startDate) {
+        let date = startDate.split("/");
+        let todayDate = new Date();
+        let employeeDate = new Date(date[2], date[1]-1 , date[0]);
+        
+        var diff = (todayDate.getTime() - employeeDate.getTime() );
+        if(employeeDate > todayDate){
+            throw "start date cannot be future date."
         }
-        this._startdate = startdate
+        if( diff < (30 * 24 * 60 * 60 * 1000) && diff > 0 ) {
+            this.startDateValue = startDate;
+        }
+        else {
+            throw "Start date cannot be less than 30 days.";
+        }
     }
 }
