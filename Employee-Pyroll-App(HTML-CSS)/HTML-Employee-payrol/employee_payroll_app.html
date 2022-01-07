@@ -20,7 +20,8 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save()">
+        <form class="form" action="#" onsubmit="saveForm(); return false">
+
             <div class="form-head">
                 Employee Payroll Form
             </div>
@@ -59,7 +60,7 @@
                 <label class="label text" for="gender">Gender</label>
                 <div>
                     <input type="radio" id="male" name="gender" value="male">
-                    <label class="tet" for="male">Male</label>
+                    <label class="text" for="male">Male</label>
                     <input type="radio" id="female" name="gender" value="female">
                     <label class="text" for="female">Female</label>
                 </div>
@@ -87,9 +88,8 @@
             </div>
             <div class="row-content">
                 <label class="tabel text" for="startDate">Start Date</label>
-                <error-output class="date-error" for="text"></error-output>
                 <div>
-                    <select name="Day" id="day">
+                    <select name="day" id="day">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -122,11 +122,11 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select name="Month" id="month">
+                    <select name="month" id="month">
                         <option value="Jan">January</option>
-                        <option value="Feb">Febuary</option>
+                        <option value="Feb">Ferbuary</option>
                         <option value="March">March</option>
-                        <option value="April">Febuary</option>
+                        <option value="April">April</option>
                         <option value="May">May</option>
                         <option value="June">June</option>
                         <option value="July">July</option>
@@ -136,7 +136,7 @@
                         <option value="Nov">November</option>
                         <option value="Dec">December</option>
                     </select>
-                    <select name="Year" id="year">
+                    <select name="year" id="year">
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
@@ -145,9 +145,21 @@
                         <option value="2017">2017</option>
                         <option value="2016">2016</option>
                         <option value="2015">2015</option>
-                        <option value="2014">2024</option>
+                        <option value="2014">2014</option>
                         <option value="2013">2013</option>
                     </select>
+                    <error-output id="date-error" for="text"></error-output>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="notes">Notes</label>
+                <textarea name="Notes" id="notes" class="input" placeholder="" style="height: 100px;"></textarea>
+            </div>
+            <div class="buttonParent">
+                <button class=" button cancelButton">Cancel</button>
+                <div class="submit-reset">
+                    <button type="submit" class="button submitButton" id="submitButton" onclick="submitEmployeeForm()"><a href="./home.html">Submit</a></button>
+                    <button type="reset" class="resetButton button">Reset</button>
                 </div>
             </div>
     </div>
@@ -161,11 +173,10 @@
             <button type="submit" class="button submitButton" id="submitButton" onclick="submitButton">Submit</button>
             <button type="reset" class="resetButton button">Reset</button>
         </div>
-    </div>
+   
     </form>
     </div>
     <script type="text/javascript" src="../JavaScript-all-here/employee_payroll.js"></script>
-    <script type="text/javascript" src="../JavaScript-all-here/employee_payrollData.js"></script>
+    <script type="text/javascript" src="../JavaScript-all-here/Employee_payrollData.js"></script>
 </body>
-
 </html>
