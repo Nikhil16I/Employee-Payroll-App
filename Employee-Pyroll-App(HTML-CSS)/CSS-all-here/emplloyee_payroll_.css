@@ -137,22 +137,27 @@ select{
     border: 1px solid #707070;
     cursor: pointer;
 }
-
+.resetButton{
+    border: #42515F 1px solid;
+}
+.resetButton:hover{
+background-color: #808488;
+color: rgb(252, 252, 252);
+}
 .submitButton {
-    border: none;
-    background-color: turquoise;
+    border: blue 1px solid;
     margin-right: 45px;
     
 }
 .submitButton:hover{
 background-color: aqua;
-border: 2px solid;
+border: 1px solid;
 }
 
 .cancelButton {
     text-decoration: none;
     text-align: center;
-    border: crimson 2px solid ;
+    border: crimson 1px solid ;
 }
 .cancelButton:hover{
     background-color: rgb(218, 110, 110);
@@ -191,7 +196,7 @@ border: 2px solid;
         margin-bottom: 20px;
     }
     .submitButton {
-        margin: 0;
+        margin: 1;
     }
     .buttonParent {
         flex-direction: column-reverse;
